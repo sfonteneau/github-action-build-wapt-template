@@ -1,0 +1,54 @@
+name: tis-vlc_macos
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  run-build-wapt-package:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 
+
+      - name: Download binary
+        run: |
+          curl -L "https://wapt.tranquil.it/wapt/releases/latest/tis-waptagent-2.6.0.16613-4de25b0a-macos-all-x86_64.pkg" -o "/tmp/waptsetup.pkg"
+        shell: bash
+
+      - name: Install wapt
+        run: |
+          sudo installer -pkg /tmp/waptsetup.pkg -target /
+        shell: bash
+
+      - name: Run updatepackage
+        run: |
+          sudo /opt/wapt/wapt-get.bin update-package-sources ./tis-vlc/macos
+        shell: bash
+
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: tis-vlc-macos.wapt
+          path: tis-vlc/macos
+
+      - name: Run install
+        run: |
+          sudo /opt/wapt/wapt-get.bin install ./tis-vlc/macos
+        shell: bash
+
+      - name: Run session-setup
+        run: |
+          sudo /opt/wapt/wapt-get.bin session-setup ALL
+        shell: bash
+
+      - name: Run audit
+        run: |
+          sudo /opt/wapt/wapt-get.bin audit ./tis-vlc/macos
+        shell: bash
+
+      - name: Run remove
+        run: |
+          sudo /opt/wapt/wapt-get.bin uninstall ./tis-vlc/macos
+        shell: bash
+            

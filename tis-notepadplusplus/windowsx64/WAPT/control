@@ -1,0 +1,44 @@
+package           : tis-notepadplusplus
+version           : 8.7.4-11
+architecture      : x64
+section           : base
+priority          : optional
+name              : Notepad++
+categories        : Office,Development
+maintainer        : WAPT Team,Tranquil IT,Jimmy PELÉ,Gaëtan SEGAT
+description       : Notepad++ is a text editor and source code editor for use with Microsoft Windows
+depends           : 
+conflicts         : 
+maturity          : PROD
+locale            : all
+target_os         : windows
+min_wapt_version  : 2.0
+sources           : https://notepad-plus-plus.org/downloads/
+installed_size    : 2527232
+impacted_process  : notepad++
+description_fr    : Notepad++ est un éditeur de texte libre générique, fonctionnant sous Windows
+description_pl    : Notepad++ jest edytorem tekstu i edytorem kodu źródłowego przeznaczonym do użytku w systemie Microsoft Windows
+description_de    : Notepad++ ist ein Text- und Quellcode-Editor für die Verwendung mit Microsoft Windows
+description_es    : Notepad++ es un editor de texto y de código fuente para usar con Microsoft Windows
+description_pt    : Notepad+++ é um editor de texto e editor de código fonte para utilização com Microsoft Windows
+description_it    : Notepad++ è un editor di testo e di codice sorgente da utilizzare con Microsoft Windows
+description_nl    : Notepad++ is een tekst-editor en broncode-editor voor gebruik met Microsoft Windows
+description_ru    : Notepad++ - это текстовый редактор и редактор исходного кода для использования в Microsoft Windows
+audit_schedule    : 
+editor            : Don Ho
+keywords          : text,editor,notepad,++,note,pad
+licence           : GPL
+homepage          : https://notepad-plus-plus.org/
+package_uuid      : f56bfaee-23cb-4287-aa6f-2d86c3fb4aba
+valid_from        : 
+valid_until       : 
+forced_install_on : 
+changelog         : https://notepad-plus-plus.org/news/
+min_os_version    : 5.1
+max_os_version    : 
+icon_sha256sum    : 416085afa2c9d514cd68126bd43084388b210a5f93da147c0a80db1821cf28a2
+signer            : Tranquil IT
+signer_fingerprint: 8c5127a75392be9cc9afd0dbae1222a673072c308c14d88ab246e23832e8c6bb
+signature_date    : 2024-12-10T04:05:53.000000
+signed_attributes : package,version,architecture,section,priority,name,categories,maintainer,description,depends,conflicts,maturity,locale,target_os,min_wapt_version,sources,installed_size,impacted_process,description_fr,description_pl,description_de,description_es,description_pt,description_it,description_nl,description_ru,audit_schedule,editor,keywords,licence,homepage,package_uuid,valid_from,valid_until,forced_install_on,changelog,min_os_version,max_os_version,icon_sha256sum,signer,signer_fingerprint,signature_date,signed_attributes
+signature         : GCUB0YnJ7m3c0jzRE3TzC6k4bQ1Nfn+UkXzoR7syTyTmdfx6Dz6HFdwBDJq9h1S2HxBGVGKUyEzrFU7OYyYklPXABe0SZyFh1jrqRvDPUmsMT5/Y2wH6Vt1kK0XaBTg8jS5U/xlrzEFx6A7Gh6R2RJdZt2kAVr5G7PVNStFF8mn0uzp7Qc54fuJT0T3shU4Dfvloy42kgwsG/kk1FUcdsFioEdgw7kZjqB9DzCMulWmcGpWqH4NX1KAKm9/iBM7pOcU7S1aOLN7VjKH59gAAaa4orQwtfKgufpFZwhefAhnxTFLz0SNFrG+wzN8ZqzZjSCpk8RfHeImexnq37tWM0g==

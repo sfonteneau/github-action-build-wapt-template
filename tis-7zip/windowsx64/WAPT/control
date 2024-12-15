@@ -1,0 +1,44 @@
+package           : tis-7zip
+version           : 24.9-46
+architecture      : x64
+section           : base
+priority          : optional
+name              : 7-Zip
+categories        : Utilities
+maintainer        : WAPT Team,Tranquil IT,Jimmy PELÉ
+description       : 7-Zip is a free and open-source file archiver with a high compression ratio
+depends           : 
+conflicts         : 
+maturity          : PROD
+locale            : all
+target_os         : windows
+min_wapt_version  : 2.1
+sources           : https://www.7-zip.org/download.html
+installed_size    : 5774712
+impacted_process  : 7z,7zFM,7zG
+description_fr    : 7-Zip est un logiciel gratuit et open source d'archivage de fichiers avec un taux de compression élevé
+description_pl    : 7-Zip to darmowy i open-source'owy archiwizator plików o wysokim stopniu kompresji
+description_de    : 7-Zip ist ein Datenkompressionsprogramm mit einer hohen Kompressionsrate
+description_es    : 7-Zip es un archivador de ficheros con una alta relación de compresión
+description_pt    : O 7-Zip é um compactador de arquivos com alta taxa de compressão
+description_it    : 7-Zip è un archiviatore di file gratuito e open-source con un elevato rapporto di compressione
+description_nl    : 7-Zip is een gratis en open-source bestands-archiver met een hoge compressieverhouding
+description_ru    : 7-Zip свободный файловый архиватор с высокой степенью сжатия данных
+audit_schedule    : 
+editor            : Igor Pavlov
+keywords          : 7zip,7,zip,7-zip,file,archiver,high,compression,ratio
+licence           : opensource_free,cpe:/a:bsd:bsd_license,cpe:/a:gnu:lgpl_v3,wapt_public
+homepage          : https://www.7-zip.org/
+package_uuid      : c5a316f5-fd2b-4c1c-bbc1-9d2f28c671d9
+valid_from        : 
+valid_until       : 
+forced_install_on : 
+changelog         : https://www.7-zip.org/history.txt
+min_os_version    : 5.0
+max_os_version    : 
+icon_sha256sum    : eddc038d3625902b6ddeaabd13dd91529e8d457ffbd0c554f96d343ae243a67a
+signer            : Tranquil IT
+signer_fingerprint: 8c5127a75392be9cc9afd0dbae1222a673072c308c14d88ab246e23832e8c6bb
+signature_date    : 2024-12-08T23:21:37.000000
+signed_attributes : package,version,architecture,section,priority,name,categories,maintainer,description,depends,conflicts,maturity,locale,target_os,min_wapt_version,sources,installed_size,impacted_process,description_fr,description_pl,description_de,description_es,description_pt,description_it,description_nl,description_ru,audit_schedule,editor,keywords,licence,homepage,package_uuid,valid_from,valid_until,forced_install_on,changelog,min_os_version,max_os_version,icon_sha256sum,signer,signer_fingerprint,signature_date,signed_attributes
+signature         : InWrcMwAobuRdcz7o33OQb4GYhkyn20SsP13dFTHOmbwqG1xsyJtC3yS4W5HFDZMJR1tglIyPK88jtrjfF824vOA8nuyRIUd4dbaa+gKCSJnP+eXO0rnJWS/Jy9YjgFC6JRpg6sgKo12T7+VOpNbbSDqIdEbz88FjlOZ/gFe6vvmeTlNoYgaabE7s5zU2n/v/T7RZmseFKif4zaD3AaQvMIssVjBQ3200uxO6BknVHfRnJdhhqWbktcrmiPf8WykFLTs0aBJ9ZmOnfztmjkpcR1TjofcmBy+HN8kKFlT/aZ7fbuv8RVztKPIpLvRSMWnXatclNxysXDz2b8fsn/d2A==

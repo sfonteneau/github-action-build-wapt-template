@@ -1,0 +1,47 @@
+name: Run Monitor website
+
+on:
+  schedule:
+    - cron: "0 * * * *"  
+  workflow_dispatch:     
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check if site has changed
+        id: check_online
+        run: |
+          python check_online.py
+
+      - name: Set Git configuration for commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+      
+      - name: Commit changes to dict_last_version
+        if: ${{ steps.check_online.outputs.DICT_CHANGED == 'true' }}
+        run: |
+          git add dict_last_version.json
+          git commit -m "Update dict_last_version"
+          git push origin ${{ github.ref }}  

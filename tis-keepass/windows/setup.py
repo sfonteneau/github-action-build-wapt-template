@@ -1,0 +1,254 @@
+# -*- coding: utf-8 -*-
+from setuphelpers import *
+
+
+uninstallkey = []
+
+
+def install():
+    versionpaquet = control["version"].split("-", 1)[0]
+    install_exe_if_needed(
+        "KeePass-%s-Setup.exe" % versionpaquet,
+        silentflags="/VERYSILENT",
+        key="KeePassPasswordSafe2_is1",
+        min_version=versionpaquet,
+        killbefore=["KeePass.exe"],
+    )
+
+    keysoftinfo = installed_softwares("KeePassPasswordSafe2_is1")
+    for info in keysoftinfo:
+        installlocation = info["install_location"]
+
+    for lf in glob.glob("*.lngx"):
+        if isfile(makepath(installlocation, "Languages", lf)):
+            remove_file(makepath(installlocation, "Languages", lf))
+        filecopyto(lf, makepath(installlocation, "Languages"))
+
+
+def session_setup():
+    if not isdir(makepath(application_data, "KeePass")):
+        mkdirs(makepath(application_data, "KeePass"))
+
+    config = makepath(application_data, "KeePass", "KeePass.config.xml")
+
+    loc = get_language().lower()
+    if loc in list_locales:
+        LanguageFile = r"""
+        <LanguageFile>%s</LanguageFile>      """ % (
+            list_locales[loc]
+        )
+    else:
+        LanguageFile = ""
+
+    if not isfile(config):
+        data = (
+            r"""<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Meta>
+        <PreferUserConfiguration>false</PreferUserConfiguration>
+        <OmitItemsWithDefaultValues>true</OmitItemsWithDefaultValues>
+    </Meta>
+    <Application>%s
+        <LastUpdateCheck>2017-06-13T19:44:53Z</LastUpdateCheck>
+        <LastUsedFile>
+            <Path />
+            <CredProtMode>Obf</CredProtMode>
+            <CredSaveMode>NoSave</CredSaveMode>
+        </LastUsedFile>
+        <MostRecentlyUsed>
+            <MaxItemCount>12</MaxItemCount>
+            <Items />
+        </MostRecentlyUsed>
+        <WorkingDirectories />
+        <Start>
+            <CheckForUpdate>false</CheckForUpdate>
+            <CheckForUpdateConfigured>true</CheckForUpdateConfigured>
+        </Start>
+        <FileOpening />
+        <FileClosing />
+        <TriggerSystem>
+            <Triggers />
+        </TriggerSystem>
+    </Application>
+    <Logging />
+    <MainWindow>
+        <X>309</X>
+        <Y>81</Y>
+        <Width>662</Width>
+        <Height>513</Height>
+        <SplitterHorizontalFrac>0.8333</SplitterHorizontalFrac>
+        <SplitterVerticalFrac>0.25</SplitterVerticalFrac>
+        <Layout>Default</Layout>
+        <ToolBar />
+        <EntryView />
+        <TanView />
+        <EntryListColumnCollection>
+            <Column>
+                <Type>Title</Type>
+                <Width>90</Width>
+            </Column>
+            <Column>
+                <Type>UserName</Type>
+                <Width>90</Width>
+            </Column>
+            <Column>
+                <Type>Password</Type>
+                <Width>90</Width>
+                <HideWithAsterisks>true</HideWithAsterisks>
+            </Column>
+            <Column>
+                <Type>Url</Type>
+                <Width>90</Width>
+            </Column>
+            <Column>
+                <Type>Notes</Type>
+                <Width>90</Width>
+            </Column>
+        </EntryListColumnCollection>
+        <EntryListColumnDisplayOrder>0 1 2 3 4</EntryListColumnDisplayOrder>
+        <ListSorting>
+            <Order>Ascending</Order>
+        </ListSorting>
+    </MainWindow>
+    <UI>
+        <TrayIcon />
+        <Hiding />
+        <StandardFont>
+            <Family>Microsoft Sans Serif</Family>
+            <Size>8.25</Size>
+            <GraphicsUnit>Point</GraphicsUnit>
+            <Style>Regular</Style>
+            <OverrideUIDefault>false</OverrideUIDefault>
+        </StandardFont>
+        <PasswordFont>
+            <Family>Courier New</Family>
+            <Size>8.25</Size>
+            <GraphicsUnit>Point</GraphicsUnit>
+            <Style>Regular</Style>
+            <OverrideUIDefault>false</OverrideUIDefault>
+        </PasswordFont>
+        <BannerStyle>WinVistaBlack</BannerStyle>
+        <DataEditorFont>
+            <Family>Microsoft Sans Serif</Family>
+            <Size>8.25</Size>
+            <GraphicsUnit>Point</GraphicsUnit>
+            <Style>Regular</Style>
+            <OverrideUIDefault>false</OverrideUIDefault>
+        </DataEditorFont>
+        <UIFlags>0</UIFlags>
+        <KeyCreationFlags>0</KeyCreationFlags>
+        <KeyPromptFlags>0</KeyPromptFlags>
+    </UI>
+    <Security>
+        <WorkspaceLocking>
+            <LockAfterTime>0</LockAfterTime>
+            <LockAfterGlobalTime>0</LockAfterGlobalTime>
+        </WorkspaceLocking>
+        <Policy />
+        <MasterPassword>
+            <MinimumLength>0</MinimumLength>
+            <MinimumQuality>0</MinimumQuality>
+        </MasterPassword>
+    </Security>
+    <Native />
+    <PasswordGenerator>
+        <AutoGeneratedPasswordsProfile>
+            <GeneratorType>CharSet</GeneratorType>
+            <Length>20</Length>
+            <CharSetRanges>ULD_______</CharSetRanges>
+        </AutoGeneratedPasswordsProfile>
+        <LastUsedProfile>
+            <GeneratorType>CharSet</GeneratorType>
+            <Length>20</Length>
+            <CharSetRanges>ULD_______</CharSetRanges>
+        </LastUsedProfile>
+        <UserProfiles />
+    </PasswordGenerator>
+    <Defaults>
+        <OptionsTabIndex>4</OptionsTabIndex>
+        <SearchParameters>
+            <ComparisonMode>InvariantCultureIgnoreCase</ComparisonMode>
+        </SearchParameters>
+        <KeySources />
+    </Defaults>
+    <Integration>
+        <HotKeyGlobalAutoType>393281</HotKeyGlobalAutoType>
+        <HotKeySelectedAutoType>0</HotKeySelectedAutoType>
+        <HotKeyShowWindow>393291</HotKeyShowWindow>
+        <HotKeyEntryMenu>0</HotKeyEntryMenu>
+        <UrlSchemeOverrides>
+            <BuiltInOverridesEnabled>1</BuiltInOverridesEnabled>
+            <CustomOverrides />
+        </UrlSchemeOverrides>
+        <AutoTypeAbortOnWindows />
+        <ProxyType>System</ProxyType>
+        <ProxyAuthType>Auto</ProxyAuthType>
+    </Integration>
+    <Custom />
+</Configuration>"""
+            % LanguageFile
+        )
+    else:
+
+        fichier = open(config, "r")
+        data = fichier.read()
+        fichier.close()
+
+        # force french
+        if not "<LanguageFile>" in data:
+            languagefile = r"""<Application>%s""" % LanguageFile
+            data = data.replace("<Application>", languagefile)
+
+        # disable update
+        if "<CheckForUpdate>true</CheckForUpdate>" in data:
+            data = data.replace("<CheckForUpdate>true</CheckForUpdate>", "<CheckForUpdate>false</CheckForUpdate>")
+
+    fichier = open(config, "w")
+    fichier.write(data)
+    fichier.close()
+
+
+list_locales = {
+    "ar": "Arabic.lngx",  # Arabic
+    "ca": "Catalan.lngx",  # Catalan
+    "zh": "Chinese_Simplified.lngx",  # Chinese - Simplified
+    "zh": "Chinese_Traditional.lngx",  # Chinese - Traditional
+    "co": "French.lngx",  # Corsican - France
+    "hr": "Croatian.lngx",  # Croatian
+    "cs": "Czech.lngx",  # Czech
+    "da": "Danish.lngx",  # Danish
+    "nl": "Dutch.lngx",  # Dutch
+    "et": "Estonian.lngx",  # Estonian
+    "fi": "Finnish.lngx",  # Finnish
+    "fr": "French.lngx",  # French
+    "de": "German.lngx",  # German - Germany
+    "el": "Greek.lngx",  # Greek
+    "he": "Hebrew.lngx",  # Hebrew
+    "hu": "Hungarian",  # Hungarian
+    "is": "Icelandic.lngx",  # Icelandic
+    "id": "Indonesian.lngx",  # Indonesian
+    "it": "Italian.lngx",  # Italian - Italy
+    "ja": "Japanese.lngx",  # Japanese
+    "ko": "Korean.lngx",  # Korean
+    "lv": "Latvian.lngx",  # Latvian
+    "lt": "Lithuanian.lngx",  # Lithuanian
+    "dsb": "German.lngx",  # Lower Sorbian - Germany
+    "nb": "Norwegian_NB.lngx",  # Norwegian - Bokmal
+    "nn": "Norwegian_NB.lngx",  # Norwegian - Nynorsk
+    "ps": "Pashto.lngx",  # Pashto - Afghanistan
+    "fa": "Persian.lngx",  # Persian
+    "pl": "Polish.lngx",  # Polish
+    "pt": "Portuguese_PT.lngx",  # Portuguese - Brazil
+    "ro": "Romanian.lngx",  # Romanian - Romania
+    "ru": "Russian.lngx",  # Russian
+    "sr": "Serbian_Cyrillic.lngx",  # Serbian
+    "sk": "Slovak.lngx",  # Slovak
+    "sl": "Slovenian.lngx",  # Slovenian
+    "es": "Spanish.lngx",  # Spanish - Spain
+    "sv": "Swedish.lngx",  # Swedish
+    "tr": "Turkish.lngx",  # Turkish
+    "ug": "Arabic.lngx",  # Arabic
+    "uk": "Ukrainian.lngx",  # Ukrainian
+    "wen": "German.lngx",  # Upper Sorbian - Germany
+    "vi": "Vietnamese.lngx",  # Vietnamese
+}

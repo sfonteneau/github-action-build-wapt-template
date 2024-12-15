@@ -1,0 +1,54 @@
+name: tis-vlc_windows
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  run-build-wapt-package:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 
+
+      - name: Download binary
+        run: |
+          curl -L "https://wapt.tranquil.it/wapt/releases/latest/waptsetup.exe" -o "c:\waptsetup.exe"
+        shell: cmd
+
+      - name: Install wapt
+        run: |
+          "C:\waptsetup.exe" /VERYSILENT
+        shell: cmd
+
+      - name: Run updatepackage
+        run: |
+          "C:\Program Files (x86)\wapt\wapt-get.exe"  update-package-sources ./tis-vlc/windows
+        shell: cmd
+
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: tis-vlc-windows.wapt
+          path: tis-vlc/windows
+
+      - name: Run install
+        run: |
+          "C:\Program Files (x86)\wapt\wapt-get.exe"  install ./tis-vlc/windows
+        shell: cmd
+
+      - name: Run session-setup
+        run: |
+          "C:\Program Files (x86)\wapt\wapt-get.exe"  session-setup ALL
+        shell: cmd
+
+      - name: Run audit
+        run: |
+          "C:\Program Files (x86)\wapt\wapt-get.exe"  audit ./tis-vlc/windows
+        shell: cmd
+
+      - name: Run remove
+        run: |
+          "C:\Program Files (x86)\wapt\wapt-get.exe"  uninstall ./tis-vlc/windows
+        shell: cmd
+            

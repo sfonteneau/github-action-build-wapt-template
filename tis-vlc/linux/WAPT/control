@@ -1,0 +1,44 @@
+package           : tis-vlc
+version           : 3.0.16-13
+architecture      : all
+section           : base
+priority          : optional
+name              : VLC media player
+categories        : Media
+maintainer        : WAPT Team,Tranquil IT,Jimmy PELÉ
+description       : VLC media player (VLC) is a free and open-source portable cross-platform media player software and streaming media server developed by the VideoLAN project
+depends           : 
+conflicts         : 
+maturity          : PROD
+locale            : all
+target_os         : linux
+min_wapt_version  : 2.0
+sources           : https://www.videolan.org/vlc/
+installed_size    : 179061248
+impacted_process  : vlc,vlc-cache-gen
+description_fr    : VLC media player (VLC) est un lecteur multimédia français libre issu du projet VideoLAN
+description_pl    : VLC media player – odtwarzacz multimedialny rozwijany przez VideoLAN, rozpowszechniany na licencji GPL
+description_de    : Der VLC media player ist eine freie Mediaplayer-Software
+description_es    : VLC media player es un reproductor y framework multimedia, libre y de código abierto desarrollado por el proyecto VideoLAN
+description_pt    : O leitor de media VLC (VLC) é um software de leitor de media portátil, gratuito e de código aberto, e um servidor de media de streaming desenvolvido pelo projecto VideoLAN
+description_it    : VLC media player (VLC) è un lettore multimediale portatile multipiattaforma gratuito e open-source e un server multimediale di streaming sviluppato dal progetto VideoLAN
+description_nl    : VLC media player (VLC) is een gratis en open-source draagbare cross-platform media player software en streaming media server ontwikkeld door het VideoLAN project
+description_ru    : Медиаплеер VLC (VLC) - это бесплатное портативное кроссплатформенное программное обеспечение с открытым исходным кодом для медиаплеера и сервера потокового мультимедиа, разработанное проектом VideoLAN
+audit_schedule    : 
+editor            : VideoLAN
+keywords          : vlc,videolan,media,video,movie,player
+licence           : GPL-2.0
+homepage          : https://www.videolan.org/
+package_uuid      : 580b31be-7251-402c-aaa1-b332e0ab8f1b
+valid_from        : 
+valid_until       : 
+forced_install_on : 
+changelog         : https://code.videolan.org/videolan/vlc/-/raw/3.0.x/NEWS
+min_os_version    : 5.1
+max_os_version    : 
+icon_sha256sum    : caaf9fa15a3794cc95bd0b2a6000c37ef1cc84c866a5cb15fe5d3bf9f29eb054
+signer            : Tranquil IT
+signer_fingerprint: 8c5127a75392be9cc9afd0dbae1222a673072c308c14d88ab246e23832e8c6bb
+signature         : cxK0i1/352YAbg2JzUtNl6DGnnq9kY0sXGps7SniB66Mc1xzzEgMbbyspT0AR5YUjssB5D0mZaUtSqpk3EhXLlapBFzkYhkxy4w30j17pbrfETOkxPH5Fiya18D7LQTg2K/JLOqU+bfTmT8ML1Y85Xwfu1uk4KvMxz4bI0tBDi+9Wt7lTButZKTNTHjnezMRDipaHc+OX1JBDgx2AcCs3HhKq7Eib8djNTggCpet1U5y89GuyRjwK85iTbGDV2Tdy7HRb8YW4RqOOX7VzdwzPQaQOtOX+15MsioXklmJjm0fi4r8+7zinUj+d2lTS7iLxX3KqWza49TPDLxXMnrrYA==
+signature_date    : 2022-11-25T13:44:02.061643
+signed_attributes : package,version,architecture,section,priority,name,categories,maintainer,description,depends,conflicts,maturity,locale,target_os,min_wapt_version,sources,installed_size,impacted_process,description_fr,description_pl,description_de,description_es,description_pt,description_it,description_nl,description_ru,audit_schedule,editor,keywords,licence,homepage,package_uuid,valid_from,valid_until,forced_install_on,changelog,min_os_version,max_os_version,icon_sha256sum,signer,signer_fingerprint,signature_date,signed_attributes

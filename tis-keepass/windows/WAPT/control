@@ -1,0 +1,44 @@
+package           : tis-keepass
+version           : 2.57-32
+architecture      : all
+section           : base
+priority          : optional
+name              : KeePass
+categories        : Security,Utilities
+maintainer        : WAPT Team,Tranquil IT,Jimmy PELÉ,Simon Fonteneau
+description       : KeePass Password Safe is a free and open-source password manager
+depends           : 
+conflicts         : 
+maturity          : PROD
+locale            : all
+target_os         : windows
+min_wapt_version  : 2.0
+sources           : https://sourceforge.net/projects/keepass/
+installed_size    : 
+impacted_process  : KeePass
+description_fr    : KeePass Password Safe est un gestionnaire de mots de passe publié sous licence libre
+description_pl    : KeePass Password Safe to darmowy i open-source'owy menedżer haseł
+description_de    : KeePass Password Safe ist ein kostenloser und quelloffener Passwortmanager
+description_es    : KeePass Password Safe es un gestor de contraseñas gratuito y de código abierto
+description_pt    : KeePass Password Safe é um gestor de senhas gratuito e de código aberto
+description_it    : KeePass Password Safe è un gestore di password gratuito e open source
+description_nl    : KeePass Password Safe is een gratis en open-source wachtwoordmanager
+description_ru    : KeePass Password Safe - бесплатный менеджер паролей с открытым исходным кодом
+audit_schedule    : 
+editor            : Dominik Reichl
+keywords          : password,manager,keepass,keep,pass,passwords
+licence           : GPLv2
+homepage          : https://keepass.info/
+package_uuid      : 62631bc7-7011-4e9a-9eae-2fb9c3e51348
+valid_from        : 
+valid_until       : 
+forced_install_on : 
+changelog         : https://keepass.info/news/news_all.html
+min_os_version    : 
+max_os_version    : 
+icon_sha256sum    : 9855b4f581d2abce7c7418d436092535d7e01d4da9096bcdbae39edc9c7d9f1f
+signer            : Tranquil IT
+signer_fingerprint: 8c5127a75392be9cc9afd0dbae1222a673072c308c14d88ab246e23832e8c6bb
+signature         : rOWG7qBmg8B22spcCkg2+6nTnh8/+wOFQx5hsLtbxFASE0wZj3OkpxFA433tP4lEqvx5pifa7/5kG0GaRqrRVk3crb7fD4j84KPqNgfrU7W8hRWFvO6gHpojOY4Cn2AbNPC98H2n/ChOvDFTgI9VYdsrfw/Y76L9K2tUdfIx4ZE9E/LaCgxpuz8zjaPbXG2G87nGS0EV3ugaQQTCHO15gtSxV9tZ3QNJYQJg+dSUzYnCmE1L1yyL/vIBU36X2ZUv8Qd6HjI3yfQirarSOjcfpp0QhTlKSiqwBthXYfS5xQPMoQjW0VlUicqPxvqteM5sYQ5B8TVUzY60q1RyQn7qVA==
+signature_date    : 2024-06-06T22:00:59.015472
+signed_attributes : package,version,architecture,section,priority,name,categories,maintainer,description,depends,conflicts,maturity,locale,target_os,min_wapt_version,sources,installed_size,impacted_process,description_fr,description_pl,description_de,description_es,description_pt,description_it,description_nl,description_ru,audit_schedule,editor,keywords,licence,homepage,package_uuid,valid_from,valid_until,forced_install_on,changelog,min_os_version,max_os_version,icon_sha256sum,signer,signer_fingerprint,signature_date,signed_attributes
