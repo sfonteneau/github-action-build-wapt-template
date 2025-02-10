@@ -64,7 +64,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v4 
 
       - name: Download binary
         run: |
@@ -82,7 +82,7 @@ jobs:
         shell: {dict_host[host]['shell']}
 
       - name: Upload build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: {pfolder.replace('/','-')}.wapt
           path: {pfolder}
