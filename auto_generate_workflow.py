@@ -50,10 +50,11 @@ for package in glob.glob(os.path.join('**','control'), recursive=True):
     pfolder = package.rsplit(os.path.sep,2)[0]
  
     pe = PackageEntry(waptfile=pfolder)
+    pfolder = pfolder.replace(os.path.sep,'/')
     for host in dict_host:
         hostcap = dict_host[host]['host_capa']
         if hostcap.is_matching_package(pe):
-            datayaml = f"""name: {pfolder.replace(os.path.sep,'_')}
+            datayaml = f"""name: {pfolder.replace("/",'_')}
 
 on:
   workflow_dispatch:  
@@ -107,7 +108,7 @@ jobs:
           {dict_host[host]['cmdwapt']} uninstall ./{pfolder}
         shell: {dict_host[host]['shell']}
             """
-            with open(os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace(os.path.sep,'-')) ,'w') as f :
+            with open(os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace('/','-')) ,'w') as f :
                 f.write(datayaml)
-            print('Generate %s' % os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace(os.path.sep,'-')))
+            print('Generate %s' % os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace('/','-')))
             break
