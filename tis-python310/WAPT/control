@@ -1,0 +1,44 @@
+package           : tis-python310
+version           : 3.10.11-42
+architecture      : x64
+section           : base
+priority          : optional
+name              : Python 3.10
+categories        : Development
+maintainer        : WAPT Team,Tranquil IT,Jimmy PELÉ
+description       : Python is an interpreted, high-level, general-purpose programming language
+depends           : tis-vcredist
+conflicts         : 
+maturity          : PROD
+locale            : all
+target_os         : windows
+min_wapt_version  : 2.0
+sources           : https://www.python.org/downloads/windows/
+installed_size    : 129994752
+impacted_process  : 
+description_fr    : Python est un langage de programmation interprété, multi-paradigme et multiplateformes
+description_pl    : Python jest interpretowanym, wysokopoziomowym językiem programowania ogólnego przeznaczenia
+description_de    : Python ist eine interpretierte Hochsprachenprogrammiersprache für allgemeine Zwecke
+description_es    : Python es un lenguaje de programación interpretado, de alto nivel y de propósito general
+description_pt    : Python é uma linguagem de programação interpretada, de alto nível, de uso geral
+description_it    : Python è un linguaggio di programmazione interpretato, di alto livello e di uso generale
+description_nl    : Python is een geïnterpreteerde, algemene programmeertaal op hoog niveau
+description_ru    : Python - интерпретируемый, высокоуровневый язык программирования общего назначения
+audit_schedule    : 
+editor            : Python Software Foundation
+keywords          : python,3,3.10,programming,language,interpreted,py,.py,code,coding,language,object-oriented
+licence           : Python Software Foundation License
+homepage          : https://www.python.org/
+package_uuid      : e1bf3bcf-3c8e-4985-b848-e16f7887be55
+valid_from        : 
+valid_until       : 
+forced_install_on : 
+changelog         : https://docs.python.org/3.10/whatsnew/changelog.html
+min_os_version    : 6.0
+max_os_version    : 
+icon_sha256sum    : b55b23fa81945c6cd4c2f4f114188aa9f8f3d0c3cbb9fb353b2803ffbb67b43b
+signer            : Tranquil IT
+signer_fingerprint: 8c5127a75392be9cc9afd0dbae1222a673072c308c14d88ab246e23832e8c6bb
+signature         : BwCrwqUjpd9OkMieVwQOzey1OCRnm98q5GUCoqu2Ij3gajmg5vx+E+3DWOwEncbr+f7UYpa258gNa6l+jYbHp2y4A8w78kHChdwnGqcJtc4izP23cAtMXZl/mXLIwHB2gmnrBNq7HvonUP2SmtwwtTyzLLSYrypr4DP3DpTkCLQf6a9FrEwvWNzPNg+VfnldyPwXjjQJINf/a/HviVeEPdPNtHppJTSmSM993o2BbbVjvaHJEDWunmrU0EEkRLoaWWYDzg2EJ3kSA9T6wFYzd0QGKKR7xOmQaGx6/VcEl+mWoKAe6u/jRcXsDXjwTjplxCPNz0BhT6P9eN7J1bKVRQ==
+signature_date    : 2023-12-23T16:00:50.382112
+signed_attributes : package,version,architecture,section,priority,name,categories,maintainer,description,depends,conflicts,maturity,locale,target_os,min_wapt_version,sources,installed_size,impacted_process,description_fr,description_pl,description_de,description_es,description_pt,description_it,description_nl,description_ru,audit_schedule,editor,keywords,licence,homepage,package_uuid,valid_from,valid_until,forced_install_on,changelog,min_os_version,max_os_version,icon_sha256sum,signer,signer_fingerprint,signature_date,signed_attributes
