@@ -10,7 +10,7 @@ github_repository = os.getenv('GITHUB_REPOSITORY')
 
 def check_version(dict_version={}):
 
-    package_name = os.path.realpath(__file__).split('/')[-3]
+    package_name = os.path.realpath(__file__).split(os.path.sep)[-3]
 
 
     url = requests.head("https://sourceforge.net/projects/keepass/files/latest/download?source=files").headers["Location"]

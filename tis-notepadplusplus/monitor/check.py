@@ -10,7 +10,7 @@ github_repository = os.getenv('GITHUB_REPOSITORY')
 
 def check_version(dict_version={}):
 
-    package_name = os.path.realpath(__file__).split('/')[-3]
+    package_name = os.path.realpath(__file__).split(os.path.sep)[-3]
 
 
     git_repo = "notepad-plus-plus/notepad-plus-plus"
