@@ -43,17 +43,17 @@ dict_host = {
 
 base_folder = os.path.realpath(os.path.join( os.path.dirname(os.path.realpath(__file__))))
 for f in glob.glob(os.path.join(base_folder,'.github','workflows','*.yaml')):
-    if not f.split('/')[-1] in ['monitor.yaml']:
+    if not f.split(os.path.sep)[-1] in ['monitor.yaml']:
         os.remove(f)
 
 for package in glob.glob(os.path.join('**','control'), recursive=True):
-    pfolder = package.rsplit('/',2)[0]
+    pfolder = package.rsplit(os.path.sep,2)[0]
  
     pe = PackageEntry(waptfile=pfolder)
     for host in dict_host:
         hostcap = dict_host[host]['host_capa']
         if hostcap.is_matching_package(pe):
-            datayaml = f"""name: {pfolder.replace('/','_')}
+            datayaml = f"""name: {pfolder.replace(os.path.sep,'_')}
 
 on:
   workflow_dispatch:  
@@ -107,7 +107,7 @@ jobs:
           {dict_host[host]['cmdwapt']} uninstall ./{pfolder}
         shell: {dict_host[host]['shell']}
             """
-            with open(os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace('/','-')) ,'w') as f :
+            with open(os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace(os.path.sep,'-')) ,'w') as f :
                 f.write(datayaml)
-            print('Generate %s' % os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace('/','-')))
+            print('Generate %s' % os.path.join(base_folder,'.github','workflows','%s.yaml' % pfolder.replace(os.path.sep,'-')))
             break
